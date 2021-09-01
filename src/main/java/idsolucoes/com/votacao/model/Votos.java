@@ -11,18 +11,33 @@ public class Votos {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "enquente_id")
+    @JoinColumn(name = "enquete_id")
     private Enquete enquete;
 
     @OneToOne
     @JoinColumn(name = "id_ddd_brasil")
     private DDDBrasil ddd;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_candidato")
     private Candidato candidato;
 
     private String ipVotacao;
+
+    public Votos() {
+    }
+
+    public Votos(Integer id,
+                 Enquete enquete,
+                 DDDBrasil ddd,
+                 Candidato candidato,
+                 String ipVotacao) {
+        this.id = id;
+        this.enquete = enquete;
+        this.ddd = ddd;
+        this.candidato = candidato;
+        this.ipVotacao = ipVotacao;
+    }
 
     public Integer getId() {
         return id;

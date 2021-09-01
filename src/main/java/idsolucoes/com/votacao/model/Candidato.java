@@ -2,6 +2,7 @@ package idsolucoes.com.votacao.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "candidato", indexes = { @Index(name = "inx_canditatos", columnList = "id")})
